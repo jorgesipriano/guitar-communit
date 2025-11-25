@@ -16,20 +16,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Outfit', sans-serif;
-}
-
-body {
-    background-color: var(--primary-bg);
-    color: var(--text-primary);
-    min-height: 100vh;
-    background-image:
-        radial-gradient(circle at 10% 20%, rgba(59, 130, 246, 0.15) 0%, transparent 20%),
-        radial-gradient(circle at 90% 80%, rgba(147, 51, 234, 0.15) 0%, transparent 20%);
-}
-
-.app-container {
-    max-width: 1200px;
-    margin: 0 auto;
     padding: 20px;
 }
 

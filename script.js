@@ -7,8 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Elements
     const navCommunity = document.getElementById('nav-community');
+    const navRepertoire = document.getElementById('nav-repertoire');
     const navLessons = document.getElementById('nav-lessons');
     const viewCommunity = document.getElementById('view-community');
+    const viewRepertoire = document.getElementById('view-repertoire');
     const viewLogin = document.getElementById('view-login');
     const viewLessons = document.getElementById('view-lessons');
     const loginForm = document.getElementById('login-form');
@@ -17,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Navigation Logic
     function switchView(viewName) {
         // Hide all views
-        [viewCommunity, viewLogin, viewLessons].forEach(el => {
+        [viewCommunity, viewRepertoire, viewLogin, viewLessons].forEach(el => {
             el.classList.remove('active');
             setTimeout(() => {
                 if (!el.classList.contains('active')) el.style.display = 'none';
@@ -26,12 +28,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Update Nav State
         navCommunity.classList.toggle('active', viewName === 'community');
+        navRepertoire.classList.toggle('active', viewName === 'repertoire');
         navLessons.classList.toggle('active', viewName === 'lessons' || viewName === 'login');
 
         // Show target view
         let targetView;
         if (viewName === 'community') {
             targetView = viewCommunity;
+        } else if (viewName === 'repertoire') {
+            targetView = viewRepertoire;
         } else if (viewName === 'lessons') {
             targetView = state.isLoggedIn ? viewLessons : viewLogin;
         } else if (viewName === 'login') {
@@ -52,6 +57,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Event Listeners
     navCommunity.addEventListener('click', () => switchView('community'));
+    navRepertoire.addEventListener('click', () => switchView('repertoire'));
 
     navLessons.addEventListener('click', () => {
         if (state.isLoggedIn) {
