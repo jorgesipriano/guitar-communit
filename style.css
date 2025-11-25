@@ -138,19 +138,6 @@ nav button.active {
     padding: 12px;
     color: white;
     resize: none;
-    height: 80px;
-    font-family: inherit;
-    outline: none;
-    transition: border-color 0.3s;
-}
-
-.create-post-header textarea:focus {
-    border-color: var(--accent-color);
-}
-
-.create-post-actions {
-    display: flex;
-    justify-content: space-between;
     align-items: center;
     padding-left: 55px;
     /* Align with text area */

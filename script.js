@@ -152,19 +152,40 @@ document.addEventListener('DOMContentLoaded', () => {
     const newPostContent = document.getElementById('new-post-content');
     const newPostName = document.getElementById('new-post-name');
     const newPostTag = document.getElementById('new-post-tag');
-    // const feedContainer = document.querySelector('.feed'); // Not used directly
+    const newPostImage = document.getElementById('new-post-image');
+    const newPostLink = document.getElementById('new-post-link');
 
     if (btnCreatePost) {
         btnCreatePost.addEventListener('click', () => {
             const text = newPostContent.value.trim();
             const name = newPostName.value.trim() || 'Anônimo';
             const tag = newPostTag.value;
+            const imageUrl = newPostImage.value.trim();
+            const linkUrl = newPostLink.value.trim();
             const initials = getInitials(name);
 
-            if (!text) return;
+            if (!text && !imageUrl && !linkUrl) return;
 
             // Generate unique ID
             const postId = Date.now();
+
+            // Build Media HTML
+            let mediaHtml = '';
+            if (imageUrl) {
+                mediaHtml += `
+                    <div class="post-media">
+                        <img src="${imageUrl}" alt="Imagem do post" onerror="this.style.display='none'">
+                    </div>
+                `;
+            }
+            if (linkUrl) {
+                mediaHtml += `
+                    <a href="${linkUrl}" target="_blank" class="post-link-preview">
+                        <i data-lucide="link"></i>
+                        <span>${linkUrl}</span>
+                    </a>
+                `;
+            }
 
             // Create Post HTML
             const postArticle = document.createElement('article');
@@ -185,8 +206,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <span class="tag">${tag}</span>
                 </div>
                 <div class="post-content">
-                    <h3>${tag === 'Dica' ? 'Nova Dica Compartilhada 💡' : tag === 'Pergunta' ? 'Dúvida da Comunidade ❓' : 'Atualização 📢'}</h3>
+                    <h3>${tag === 'Dica' ? 'Nova Dica Compartilhada 💡' : tag === 'Pergunta' ? 'Dúvida da Comunidade ❓' : tag === 'Louvor' ? 'Louvor & Adoração 🙌' : 'Atualização 📢'}</h3>
                     <p>${text}</p>
+                    ${mediaHtml}
                 </div>
                 <div class="post-actions">
                     <button class="action-btn"><i data-lucide="heart"></i> Curtir</button>
@@ -230,6 +252,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Clear input
             newPostContent.value = '';
+            newPostImage.value = '';
+            newPostLink.value = '';
         });
     }
 });
