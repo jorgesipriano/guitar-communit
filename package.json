@@ -1,11 +1,11 @@
 {
-  "name": "guitar-community",
-  "version": "1.0.0",
-  "description": "Guitar Community App",
-  "scripts": {
-    "build": "echo 'Build script executed successfully'"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+    "name": "guitar-community",
+    "version": "1.0.0",
+    "description": "Guitar Community App",
+    "scripts": {
+        "build": "mkdir -p dist && cp *.html *.css *.js dist/"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
 }
