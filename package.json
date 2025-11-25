@@ -1,0 +1,11 @@
+{
+  "name": "guitar-community",
+  "version": "1.0.0",
+  "description": "Guitar Community App",
+  "scripts": {
+    "build": "echo 'Build script executed successfully'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
