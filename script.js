@@ -262,6 +262,27 @@ document.addEventListener('DOMContentLoaded', () => {
             newPostLink.value = '';
         });
     }
+
+    // Repertoire Search Logic
+    const searchInput = document.getElementById('repertoire-search');
+    if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const songs = document.querySelectorAll('.song-card');
+
+            songs.forEach(song => {
+                const title = song.querySelector('.song-title').textContent.toLowerCase();
+                const artist = song.querySelector('.song-artist').textContent.toLowerCase();
+                const tag = song.querySelector('.song-tag').textContent.toLowerCase();
+
+                if (title.includes(searchTerm) || artist.includes(searchTerm) || tag.includes(searchTerm)) {
+                    song.style.display = 'block';
+                } else {
+                    song.style.display = 'none';
+                }
+            });
+        });
+    }
 });
 
 // Register Service Worker for PWA
