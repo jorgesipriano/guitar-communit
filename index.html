@@ -31,6 +31,8 @@
                 <button id="nav-community" class="active">Comunidade</button>
                 <button id="nav-repertoire">Repertório</button>
                 <button id="nav-lessons">Aulas</button>
+                <button id="btn-install" class="btn-primary small" style="display: none; margin-left: 10px;">Instalar
+                    📲</button>
             </nav>
         </header>
 
@@ -141,6 +143,31 @@
                                 <button class="btn-send" onclick="postComment(2)"><i data-lucide="send"></i></button>
                             </div>
                         </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- Repertoire Section -->
+            <section id="view-repertoire" class="view hidden">
+                <div class="lessons-header">
+                    <h2>Sugestões para o Culto 🎵</h2>
+                    <p style="color: var(--text-secondary)">Ideias de hinos e louvores para montar seu repertório.</p>
+                </div>
+
+                <!-- Search Bar -->
+                <div class="search-container" style="margin-bottom: 30px;">
+                    <div class="input-group">
+                        <i data-lucide="search"></i>
+                        <input type="text" id="repertoire-search" placeholder="Buscar por música, artista ou tema..."
+                            style="background: rgba(0,0,0,0.2); border: 1px solid var(--glass-border); color: white; padding: 12px 12px 12px 45px; border-radius: 12px; width: 100%; outline: none;">
+                    </div>
+                </div>
+
+                <div class="repertoire-grid">
+                    <!-- Song 1 -->
+                    <div class="song-card">
+                        <span class="song-tag">Adoração</span>
+                        <h3 class="song-title">Bondade de Deus</h3>
                         <p class="song-artist">Bethel Music / Isaías Saad</p>
                         <div class="song-actions">
                             <a href="https://www.cifraclub.com.br" target="_blank" class="btn-icon" title="Ver Cifra"><i
@@ -149,126 +176,126 @@
                                     data-lucide="play"></i></a>
                             <button class="btn-icon" title="Salvar"><i data-lucide="bookmark"></i></button>
                         </div>
-                </div>
+                    </div>
 
-                <!-- Song 2 -->
-                <div class="song-card">
-                    <span class="song-tag">Júbilo</span>
-                    <h3 class="song-title">Porque Ele Vive</h3>
-                    <p class="song-artist">Harpa Cristã / Clássico</p>
-                    <div class="song-actions">
-                        <a href="https://www.cifraclub.com.br" target="_blank" class="btn-icon" title="Ver Cifra"><i
-                                data-lucide="music-2"></i></a>
-                        <a href="https://www.youtube.com" target="_blank" class="btn-icon" title="Ouvir"><i
-                                data-lucide="play"></i></a>
-                        <button class="btn-icon" title="Salvar"><i data-lucide="bookmark"></i></button>
+                    <!-- Song 2 -->
+                    <div class="song-card">
+                        <span class="song-tag">Júbilo</span>
+                        <h3 class="song-title">Porque Ele Vive</h3>
+                        <p class="song-artist">Harpa Cristã / Clássico</p>
+                        <div class="song-actions">
+                            <a href="https://www.cifraclub.com.br" target="_blank" class="btn-icon" title="Ver Cifra"><i
+                                    data-lucide="music-2"></i></a>
+                            <a href="https://www.youtube.com" target="_blank" class="btn-icon" title="Ouvir"><i
+                                    data-lucide="play"></i></a>
+                            <button class="btn-icon" title="Salvar"><i data-lucide="bookmark"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Song 3 -->
+                    <div class="song-card">
+                        <span class="song-tag">Comunhão</span>
+                        <h3 class="song-title">A Casa é Sua</h3>
+                        <p class="song-artist">Casa Worship</p>
+                        <div class="song-actions">
+                            <a href="https://www.cifraclub.com.br" target="_blank" class="btn-icon" title="Ver Cifra"><i
+                                    data-lucide="music-2"></i></a>
+                            <a href="https://www.youtube.com" target="_blank" class="btn-icon" title="Ouvir"><i
+                                    data-lucide="play"></i></a>
+                            <button class="btn-icon" title="Salvar"><i data-lucide="bookmark"></i></button>
+                        </div>
+                    </div>
+
+                    <!-- Song 4 -->
+                    <div class="song-card">
+                        <span class="song-tag">Entrega</span>
+                        <h3 class="song-title">Lugar Secreto</h3>
+                        <p class="song-artist">Gabriela Rocha</p>
+                        <div class="song-actions">
+                            <a href="https://www.cifraclub.com.br" target="_blank" class="btn-icon" title="Ver Cifra"><i
+                                    data-lucide="music-2"></i></a>
+                            <a href="https://www.youtube.com" target="_blank" class="btn-icon" title="Ouvir"><i
+                                    data-lucide="play"></i></a>
+                            <button class="btn-icon" title="Salvar"><i data-lucide="bookmark"></i></button>
+                        </div>
                     </div>
                 </div>
+            </section>
 
-                <!-- Song 3 -->
-                <div class="song-card">
-                    <span class="song-tag">Comunhão</span>
-                    <h3 class="song-title">A Casa é Sua</h3>
-                    <p class="song-artist">Casa Worship</p>
-                    <div class="song-actions">
-                        <a href="https://www.cifraclub.com.br" target="_blank" class="btn-icon" title="Ver Cifra"><i
-                                data-lucide="music-2"></i></a>
-                        <a href="https://www.youtube.com" target="_blank" class="btn-icon" title="Ouvir"><i
-                                data-lucide="play"></i></a>
-                        <button class="btn-icon" title="Salvar"><i data-lucide="bookmark"></i></button>
+            <!-- Login Section -->
+            <section id="view-login" class="view hidden">
+                <div class="login-container">
+                    <div class="login-card">
+                        <h2>Área do Aluno</h2>
+                        <p>Faça login para acessar as aulas exclusivas.</p>
+                        <form id="login-form">
+                            <div class="input-group">
+                                <i data-lucide="mail"></i>
+                                <input type="email" placeholder="Seu e-mail" required>
+                            </div>
+                            <div class="input-group">
+                                <i data-lucide="lock"></i>
+                                <input type="password" placeholder="Sua senha" required>
+                            </div>
+                            <button type="submit" class="btn-primary">Entrar</button>
+                        </form>
+                        <p class="hint">Dica: Use qualquer e-mail para testar.</p>
                     </div>
                 </div>
+            </section>
 
-                <!-- Song 4 -->
-                <div class="song-card">
-                    <span class="song-tag">Entrega</span>
-                    <h3 class="song-title">Lugar Secreto</h3>
-                    <p class="song-artist">Gabriela Rocha</p>
-                    <div class="song-actions">
-                        <a href="https://www.cifraclub.com.br" target="_blank" class="btn-icon" title="Ver Cifra"><i
-                                data-lucide="music-2"></i></a>
-                        <a href="https://www.youtube.com" target="_blank" class="btn-icon" title="Ouvir"><i
-                                data-lucide="play"></i></a>
-                        <button class="btn-icon" title="Salvar"><i data-lucide="bookmark"></i></button>
+            <!-- Lessons Section (Protected) -->
+            <section id="view-lessons" class="view hidden">
+                <div class="lessons-header">
+                    <h2>Suas Aulas</h2>
+                    <button id="btn-logout" class="btn-outline">Sair</button>
+                </div>
+
+                <div class="lessons-grid">
+                    <!-- Lesson 1 -->
+                    <div class="lesson-card">
+                        <div class="video-wrapper">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/BBz-JYr4n_0"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="lesson-info">
+                            <h3>Introdução ao Violão</h3>
+                            <p>Conhecendo o instrumento e primeiros acordes.</p>
+                        </div>
+                    </div>
+
+                    <!-- Lesson 2 -->
+                    <div class="lesson-card">
+                        <div class="video-wrapper">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/CgVqX0a49HM"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="lesson-info">
+                            <h3>Ritmos Básicos</h3>
+                            <p>Aprenda 3 batidas essenciais para tocar milhares de músicas.</p>
+                        </div>
+                    </div>
+
+                    <!-- Lesson 3 -->
+                    <div class="lesson-card">
+                        <div class="video-wrapper">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/fG2t6q_W2q0"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <div class="lesson-info">
+                            <h3>Escala Pentatônica</h3>
+                            <p>O segredo para começar a improvisar hoje mesmo.</p>
+                        </div>
                     </div>
                 </div>
-    </div>
-    </section>
-
-    <!-- Login Section -->
-    <section id="view-login" class="view hidden">
-        <div class="login-container">
-            <div class="login-card">
-                <h2>Área do Aluno</h2>
-                <p>Faça login para acessar as aulas exclusivas.</p>
-                <form id="login-form">
-                    <div class="input-group">
-                        <i data-lucide="mail"></i>
-                        <input type="email" placeholder="Seu e-mail" required>
-                    </div>
-                    <div class="input-group">
-                        <i data-lucide="lock"></i>
-                        <input type="password" placeholder="Sua senha" required>
-                    </div>
-                    <button type="submit" class="btn-primary">Entrar</button>
-                </form>
-                <p class="hint">Dica: Use qualquer e-mail para testar.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Lessons Section (Protected) -->
-    <section id="view-lessons" class="view hidden">
-        <div class="lessons-header">
-            <h2>Suas Aulas</h2>
-            <button id="btn-logout" class="btn-outline">Sair</button>
-        </div>
-
-        <div class="lessons-grid">
-            <!-- Lesson 1 -->
-            <div class="lesson-card">
-                <div class="video-wrapper">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/BBz-JYr4n_0"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-                <div class="lesson-info">
-                    <h3>Introdução ao Violão</h3>
-                    <p>Conhecendo o instrumento e primeiros acordes.</p>
-                </div>
-            </div>
-
-            <!-- Lesson 2 -->
-            <div class="lesson-card">
-                <div class="video-wrapper">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/CgVqX0a49HM"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-                <div class="lesson-info">
-                    <h3>Ritmos Básicos</h3>
-                    <p>Aprenda 3 batidas essenciais para tocar milhares de músicas.</p>
-                </div>
-            </div>
-
-            <!-- Lesson 3 -->
-            <div class="lesson-card">
-                <div class="video-wrapper">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/fG2t6q_W2q0"
-                        title="YouTube video player" frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen></iframe>
-                </div>
-                <div class="lesson-info">
-                    <h3>Escala Pentatônica</h3>
-                    <p>O segredo para começar a improvisar hoje mesmo.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-    </main>
+            </section>
+        </main>
     </div>
     <script src="script.js"></script>
     <script>
