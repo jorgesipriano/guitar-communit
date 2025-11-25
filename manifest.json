@@ -1,16 +1,25 @@
 {
     "name": "Adoração Cristã",
     "short_name": "Adoração",
+    "id": "/",
     "start_url": "./index.html",
+    "scope": "./",
     "display": "standalone",
+    "orientation": "portrait",
     "background_color": "#0f172a",
     "theme_color": "#0f172a",
     "description": "Comunidade de violão e adoração cristã.",
+    "categories": [
+        "music",
+        "lifestyle",
+        "education"
+    ],
     "icons": [
         {
             "src": "icon.png",
             "sizes": "512x512",
-            "type": "image/png"
+            "type": "image/png",
+            "purpose": "any maskable"
         }
     ]
 }
