@@ -16,6 +16,20 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background-color: #0f172a;
+    color: var(--text-primary);
+    min-height: 100vh;
+    background-image:
+        radial-gradient(circle at 15% 25%, rgba(59, 130, 246, 0.3) 0%, transparent 40%),
+        radial-gradient(circle at 85% 75%, rgba(37, 99, 235, 0.25) 0%, transparent 40%);
+}
+
+.app-container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
 }
 
@@ -124,9 +138,86 @@ nav button.active {
     padding: 12px;
     color: white;
     resize: none;
+    height: 80px;
+    font-family: inherit;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.create-post-header textarea:focus {
+    border-color: var(--accent-color);
+}
+
+.media-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.media-input {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--glass-border);
+    border-radius: 8px;
+    padding: 8px 12px;
+    color: white;
+    outline: none;
+    font-size: 0.9rem;
+    transition: border-color 0.3s;
+}
+
+.media-input:focus {
+    border-color: var(--accent-color);
+}
+
+.post-media {
+    margin-top: 15px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.post-media img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.post-link-preview {
+    margin-top: 15px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 12px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--accent-color);
+    text-decoration: none;
+    border: 1px solid var(--glass-border);
+    transition: background 0.2s;
+}
+
+.post-link-preview:hover {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.post-link-preview i {
+    flex-shrink: 0;
+}
+
+.post-link-preview span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.9rem;
+}
+
+.create-post-actions {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     padding-left: 55px;
-    /* Align with text area */
 }
 
 .tag-selector {
@@ -317,7 +408,6 @@ nav button.active {
 .btn-send i {
     width: 18px;
     margin-left: -2px;
-    /* Visual correction */
 }
 
 /* Login Section */
@@ -473,6 +563,89 @@ nav button.active {
 .lesson-info p {
     color: var(--text-secondary);
     font-size: 0.9rem;
+}
+
+/* Repertoire Styles */
+.repertoire-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.song-card {
+    background: var(--secondary-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    padding: 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.song-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    box-shadow: 0 10px 30px -10px rgba(59, 130, 246, 0.3);
+}
+
+.song-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--accent-color);
+    opacity: 0.7;
+}
+
+.song-tag {
+    display: inline-block;
+    font-size: 0.75rem;
+    padding: 4px 10px;
+    border-radius: 20px;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent-color);
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.song-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--text-primary);
+}
+
+.song-artist {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+}
+
+.song-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-icon {
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    color: var(--text-primary);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-icon:hover {
+    background: var(--accent-color);
+    color: white;
 }
 
 /* Responsive */
